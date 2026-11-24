@@ -1,0 +1,36 @@
+{
+  "name": "research-paradigm-by-wtd-kit",
+  "version": "0.1.0",
+  "description": "一键在 DSH / Claude Code 工作区铺开「一人研究公司」开工包：规则分片、技能、目录骨架与体检脚本，零依赖。",
+  "license": "MIT",
+  "type": "module",
+  "bin": {
+    "rp-init": "./init.mjs",
+    "rp-check": "./check.mjs"
+  },
+  "files": [
+    "init.mjs",
+    "check.mjs",
+    "kit",
+    "docs",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "init": "node init.mjs",
+    "check": "node check.mjs",
+    "demo": "node init.mjs --dir ./demo-workspace --dry-run"
+  },
+  "keywords": [
+    "dsh-plugin",
+    "research",
+    "workflow",
+    "scaffold",
+    "preset",
+    "agents-md",
+    "skills"
+  ]
+}

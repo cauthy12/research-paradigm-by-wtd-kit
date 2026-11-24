@@ -1,0 +1,8 @@
+node_modules/
+demo-workspace/
+_sandbox/
+.DS_Store
+Thumbs.db
+*.log
+.idea/
+.vscode/

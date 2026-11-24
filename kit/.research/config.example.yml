@@ -1,0 +1,45 @@
+# research paradigm · by WTD — 工作区配置
+#
+# init 会把这行的副本写成 .research/config.yml；已有 config.yml 不会被覆盖。
+# 正文规则抽象，具体路径/归属/领域写在这里 —— 换机器只改这个文件。
+
+workspace:
+  name: 一人研究公司
+  timezone: Asia/Shanghai
+
+paths:
+  deliverables_dir: D:\workspace\个人输出              # 交付物落位
+  runs_dir: D:\workspace\.trae_state\runs              # 留痕目录（共享留痕通道，只追加）
+  knowledge_base: D:\workspace\知识库                  # 知识库（正文只追加）
+  skills_source: D:\workspace\agent-skills-core        # 技能唯一权威源
+  tasks_dir: D:\workspace\tasks
+  rules_source: D:\workspace\rules\constitution.md     # 规则唯一权威源
+
+forbidden_roots:                                       # 只读禁区
+  - D:\工作
+  - D:\workspace\知识库
+
+# 禁区的唯一例外：纪要落位。拿不到写权限时降级暂存 + 报告"待用户 Copy-Item 落位"
+write_exceptions:
+  minutes: D:\工作\{年份}\出差&会议纪要
+  staging: D:\workspace\meeting minutes\{年份}
+
+# 会消耗额度的 API：归属与调用纪律（未经当轮要求不真调；一调一记）
+metered_apis:
+  - name: iwencai
+    owner: ZCode
+    budget_file: D:\workspace\config\quotas.json
+  - name: tyc
+    owner: ZCode
+  - name: alphapai
+    owner: ZCode
+  - name: doubao_ocr
+    owner: ZCode
+
+domains:                                               # 自有领域：先查知识库再外部检索
+  - 光伏
+  - 储能
+  - 光伏材料
+
+freshness:
+  distilled_layer_max_age_months: 6                    # 蒸馏层超龄先核对最新原文
